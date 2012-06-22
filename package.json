@@ -5,7 +5,7 @@
 	"description": "LFSWorld API wrapper."
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/theangryangel/lfsworld.js"
+		"url": "https://github.com/theangryangel/lfsworld.js",
 	},
 	"bugs": "https://github.com/theangryangel/lfsworld.js/issues",
 	"main": "./library",
