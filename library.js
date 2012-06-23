@@ -5,21 +5,49 @@ var shred = require('shred');
 // Response object
 var response = function(values)
 {
-	this.status = values.status || 500;
+	this.error = false;
 	this.data = null;
+	this.raw = null;
 
-	if (values.content && values.content.data)
-		this.data = values.content.data || JSON.parse(values.content.body);
+	this.status = -1;
+
+	if (!values)
+	{
+		this.error = true;
+		return;
+	}
+
+	this.status = values.status || 500;
+
+	if (values.content.body && values.content.length > 0)
+	{
+		this.raw = values.content.body;
+
+		try
+		{
+			this.data = JSON.parse(values.content.body);
+		}
+		catch(err)
+		{
+			this.error = true;
+		}
+	}
+
+	if (this.data == null)
+		this.error = true;
 }
 
 response.prototype.isSuccess = function()
 {
-	return (this.status == 200);
+	return !this.isError();
 }
 
 response.prototype.isError = function()
 {
-	return (this.status >= 400);
+	if ((this.error) || (this.status >= 400))
+		return true;
+
+	return ((this.data == undefined || this.data == null));
 }
 
 // Request object
@@ -93,7 +121,7 @@ var request = function(options)
 	}
 
 	// http client
-	var transport = new shred();
+	this.transport = new shred();
 }
 
 request.prototype.setOption = function(key, value)
@@ -175,24 +203,30 @@ request.prototype.regexMatchAll = function(regex, haystack)
 
 request.prototype.fetch = function(type, params, callback)
 {
-	if (!this.request[type])
+	if (!this.requests[type])
 		return;
 
 	var url = this.options.transport + '://' + this.options.domain + 
-		this.vnsprintf(this.request[type].path, params) + 
+		this.vnsprintf(this.requests[type].path, params) + 
+		'&idk=' + this.options.idk +
 		'&version=' + this.options.version + '&s=1';
+
+	var handler = function(res)
+	{
+		var r = new response(res);
+
+		if (callback)
+			callback(r);
+	};
 
 	this.transport.get({
 		url: url,
+		headers: {
+			'User-Agent': 'lfsworld.js (Shred)'
+		},
 		on: {
-			response: function(res)
-			{
-				// ONWARDS TO VICTORY!
-				var r = new response(res);
-
-				if (callback)
-					callback(r);
-			}
+			200: handler,
+			response: handler
 		}
 	});
 }
