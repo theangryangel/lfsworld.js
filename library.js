@@ -2,13 +2,41 @@
 
 var shred = require('shred');
 
-// Response object
+/**
+ * Response object
+ * asdasdsdasd
+ *
+ * @class response
+ * @constructor
+ */
 var response = function(values)
 {
+	/**
+	 * @property error
+	 * @type {Boolean}
+	 * @default false
+	 */
 	this.error = false;
+
+	/**
+	 * @property data
+	 * @type {Object}
+	 * @default null
+	 */
 	this.data = null;
+
+	/**
+	 * @property raw
+	 * @type {String}
+	 * @default nulll
+	 */
 	this.raw = null;
 
+	/**
+	 * @property status
+	 * @type {Number}
+	 * @default -1
+	 */
 	this.status = -1;
 
 	if (!values)
@@ -37,11 +65,23 @@ var response = function(values)
 		this.error = true;
 }
 
+/**
+ * isSuccess, alternative for isError
+ *
+ * @method isSuccess
+ * @return {Boolean} Returns true if the response was not an error
+ */
 response.prototype.isSuccess = function()
 {
 	return !this.isError();
 }
 
+/**
+ * isError
+ *
+ * @method isError
+ * @return {Boolean} Returns true if the response was an error
+ */
 response.prototype.isError = function()
 {
 	if ((this.error) || (this.status >= 400))
