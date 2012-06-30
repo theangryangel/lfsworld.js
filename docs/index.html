@@ -1,0 +1,1157 @@
+<html>
+	<head>
+		<title>lfsworld.js (0.0.1-unstable) - Documentation</title>
+		<style>
+			/*!
+ * Bootstrap v2.0.4
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+#map_canvas img {
+  max-width: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  *overflow: visible;
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+p {
+  margin: 0 0 9px;
+}
+p small {
+  font-size: 11px;
+  color: #999999;
+}
+.lead {
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 27px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  color: #999999;
+}
+h1 {
+  font-size: 30px;
+  line-height: 36px;
+}
+h1 small {
+  font-size: 18px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h2 small {
+  font-size: 18px;
+}
+h3 {
+  font-size: 18px;
+  line-height: 27px;
+}
+h3 small {
+  font-size: 14px;
+}
+h4,
+h5,
+h6 {
+  line-height: 18px;
+}
+h4 {
+  font-size: 14px;
+}
+h4 small {
+  font-size: 12px;
+}
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+.page-header {
+  padding-bottom: 17px;
+  margin: 18px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.page-header h1 {
+  line-height: 1;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 9px 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+li {
+  line-height: 18px;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+dl {
+  margin-bottom: 18px;
+}
+dt,
+dd {
+  line-height: 18px;
+}
+dt {
+  font-weight: bold;
+  line-height: 17px;
+}
+dd {
+  margin-left: 9px;
+}
+.dl-horizontal dt {
+  float: left;
+  width: 120px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dl-horizontal dd {
+  margin-left: 130px;
+}
+hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+.muted {
+  color: #999999;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 18px;
+  border-left: 5px solid #eeeeee;
+}
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22.5px;
+}
+blockquote small {
+  display: block;
+  line-height: 18px;
+  color: #999999;
+}
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+blockquote.pull-right {
+  float: right;
+  padding-right: 15px;
+  padding-left: 0;
+  border-right: 5px solid #eeeeee;
+  border-left: 0;
+}
+blockquote.pull-right p,
+blockquote.pull-right small {
+  text-align: right;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+address {
+  display: block;
+  margin-bottom: 18px;
+  font-style: normal;
+  line-height: 18px;
+}
+small {
+  font-size: 100%;
+}
+cite {
+  font-style: normal;
+}
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+code {
+  padding: 2px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+pre {
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 9px;
+  font-size: 12.025px;
+  line-height: 18px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+pre.prettyprint {
+  margin-bottom: 18px;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+.hero-unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  color: inherit;
+  letter-spacing: -1px;
+}
+.hero-unit p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+  color: inherit;
+}
+
+			nav {
+	position: fixed;
+	top: 0; left: 0; bottom: 0;
+	width: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	padding: 15px 0 15px 30px;
+	border-right: 1px solid #bbb;
+}
+nav ul {
+	list-style: none;
+	margin-bottom: 9px;
+}
+nav > ul {
+	margin-left: 0;
+}
+div.container {
+	margin: 15px 15px 15px 260px;
+}
+
+code {
+	display: inline-block;
+	margin: 1em;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+}
+
+article.module {
+	margin-top: 1em;
+}
+
+.sep {
+	margin-bottom: 1em;
+}
+
+.datetime small {
+	color: #999;
+	font-size: .75em;
+}
+
+		</style>
+	</head>
+	<body name="top">
+		<nav>
+			<ul>
+				<li class="product sep"><a href="#top">lfsworld.js <span class="release">(0.0.1-unstable)</span></a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#installation">Installation</a></li>
+				<li class="sep"><a href="#example">Example</a></li>
+				<li><strong>API Documentation</strong></li>
+				
+				<li class="module sep">
+					<a href="#request">request</a>
+					<ul class="methods">
+						
+						<li class="method"><a href="#setOption">setOption</a></li>
+						
+						<li class="method"><a href="#getOption">getOption</a></li>
+						
+						<li class="method"><a href="#fixUp">fixUp</a></li>
+						
+						<li class="method"><a href="#vnsprintf">vnsprintf</a></li>
+						
+						<li class="method"><a href="#fetch">fetch</a></li>
+						
+						<li class="method"><a href="#getHl">getHl</a></li>
+						
+						<li class="method"><a href="#getCh">getCh</a></li>
+						
+						<li class="method"><a href="#getWr">getWr</a></li>
+						
+						<li class="method"><a href="#getPb">getPb</a></li>
+						
+						<li class="method"><a href="#getFuel">getFuel</a></li>
+						
+						<li class="method"><a href="#getPst">getPst</a></li>
+						
+						<li class="method"><a href="#getHosts">getHosts</a></li>
+						
+						<li class="method"><a href="#getTeams">getTeams</a></li>
+						
+						<li class="method"><a href="#getHl_log">getHl_log</a></li>
+						
+						<li class="method"><a href="#getHllog">getHllog</a></li>
+						
+						<li class="method"><a href="#getCounters">getCounters</a></li>
+						
+						<li class="method"><a href="#getHighlights">getHighlights</a></li>
+						
+					</ul>
+				</li>
+				
+				<li class="module sep">
+					<a href="#response">response</a>
+					<ul class="methods">
+						
+						<li class="method"><a href="#data">data</a></li>
+						
+						<li class="method"><a href="#raw">raw</a></li>
+						
+						<li class="method"><a href="#status">status</a></li>
+						
+						<li class="method"><a href="#isError">isError</a></li>
+						
+					</ul>
+				</li>
+				
+				<li class="datetime"><small>Generated: 2012-06-30T19:19:28.631Z by <a
+					href="https://github.com/theangryangel/dox-tpl">dox-tpl</a></small></li>
+			</ul>
+		</nav>
+
+		<div class="container">
+
+			<header>
+				<div class="hero-unit">
+					<h1>lfsworld.js <small>0.0.1-unstable</small></h1>
+					<p>Documentation</p>
+	    		</div>
+			</header>
+
+			<article>
+	<a name="about"></a>
+	<header>
+		<h2>About <small>Stuff you really want to know</small></h2>
+	</header>
+
+	<p>lfsworld.js is a small utility wrapper around <a href="">Shred</a> to
+	query <a href="http://www.lfsworld.net/">LFSWorld.net's</a> pubstats <a
+		href="http://www.lfsforum.net/showthread.php?t=14480">API</a>.</p>
+	<p>Tested and built for node, however as Shred supports the browser it may
+	also work there. It is untested in that scenario at present.</p>
+
+	<p>If you find bugs, or have issues with lfsworld.js please log an issue on
+	github. Pull requests and patches are welcome. If you submit a patch please
+	feel free to add your name and details to the package.json contributors key.</p>
+</article>
+
+<article>
+	<a name="installation"></a>
+	<header>
+		<h2>Installation <small>Network fish</small></h2>
+	</header>
+
+	<code>npm install lfsworld.js</code>
+</article>
+
+<article>
+	<a name="example"></a>
+	<header>
+		<h2>All-in-one Example <small>Hit the ground running</small></h2>
+	</header>
+
+<code>var lfsw = require('lfsworld.js');
+
+var i = new lfsw({ idk: 'your-ident-key-here' });
+
+i.getHosts(function(res) {
+
+	if (res.isError())
+	{
+		console.error(res.raw);
+		return;
+	}
+
+	console.log(res.data);
+
+});
+</code>
+</article>
+
+
+		
+			
+			<article id="request" class="module">
+				<header>
+					<h2>request <small>module</small></h2>
+				</header>
+
+				<section class="params">
+					<dl class="dl-horizontal">
+						
+						<dt>param</dt> <dd>Object options See setOptions for a full list of setable options</dd>
+						
+
+						
+					</dl>
+				</section>
+
+				<section>
+					<p>The <strong>request</strong> object is the starting point for any interaction with<br />LFSWorld's API, using lfsworld.js. To begin off you must create an instance of the request object:<br /><code>var lfsworld = new request({ idk: 'your-ident-key' });</code></p>
+
+<p>Before making any requests, at <strong>minimum</strong> you must supply your ident key.<br />You can either do this at instantiation or at a later point in time using the<br /><a href="#setOption">setOption</a> method. </p>
+
+<p>The request object supplies a number of convenience functions to query<br />LFSWorld. Lets take the current online hosts as an example. In the following<br />code snippet the following is happening:</p>
+
+<ul>
+<li>An Instance of the request object is being created</li>
+<li>A request is being created, to ask LFSWorld what the current online hosts
+are, in this example the first argument to getHosts is a callback</li>
+<li>When a request is complete, the callback is called</li>
+<li>The callback then checks to see if the response is an error, and if it
+does it outputs the raw response from LFSWorld to the console</li>
+<li>If there was no error it outputs the parsed response to the console</li>
+</ul>
+
+<p><code>var lfsworld = new request({ idk: 'your-ident-key' });<br />lfsworld.getHosts(function(res) {<br />    if (res.isError())<br />    {<br />        console.error(res.raw);<br />        return;<br />    }<br />    console.log(res.data);<br />});</code></p>
+				</section>
+
+				
+				<section class="method" id="setOption">
+					<header>
+						<h3>setOption <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String key </dd>
+							
+
+							
+							<dt>return</dt> <dd>Object </dd>
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Sets the value for a given option. Valid options are:<br />   + transport: http or https<br />   + domain: defaults to "www.lfsworld.net"<br />   + version: the version requests are sent as, defaults to 1.5<br />   + idk: your ident key, <strong>must</strong> be set</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getOption">
+					<header>
+						<h3>getOption <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String key </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Returns the value of the requested option</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="fixUp">
+					<header>
+						<h3>fixUp <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String key Key used to refer to the request type</dd>
+							
+							<dt>param</dt> <dd>String path Absolute path to the API call, any variables must be added and supported by the vnsprintf implementation</dd>
+							
+							<dt>param</dt> <dd>Number minver Minimum supported version</dd>
+							
+
+							
+							<dt>return</dt> <dd>Boolean true on success, if returned false most likely use to potential overwrite</dd>
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Allows a user to add new API calls, without patching the source, if <br />lfsworld.js has not yet been updated.</p>
+
+<p>For example, to add a duplication of the hl request you could do the following:<br /><code>request.fixUp('hl2', '/pubstat/get_stat2.php?action=hl&amp;racer=%(racer)s', 1.3)</code></p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="vnsprintf">
+					<header>
+						<h3>vnsprintf <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String format </dd>
+							
+							<dt>param</dt> <dd>Object params </dd>
+							
+
+							
+							<dt>return</dt> <dd>String </dd>
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>vsnprintf<br />Partial named, vsprint implementation <br />expected sprintf format of %(variablename)type</p>
+
+<p>If you add any new request, using <a href="#fixUp">fixUp</a> then please be<br />aware your path MUST support variables in this manner.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="fetch">
+					<header>
+						<h3>fetch <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String type </dd>
+							
+							<dt>param</dt> <dd>Object params </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Using fetch you can call and retreive any type of LFSWorld call, that<br />lfsworld.js knows about. For convenience I would recommend using the<br />convenience functions instead, however they are only proxies to fetch.</p>
+
+<p>For example you could use fetch, instead of getHl, to get all hotlaps <br />of a specific racer:<br /><code>request.fetch('hl', { racer: racername }, callback)</code></p>
+
+<p>The convenience functions are not automatically created, so if a new call is<br />added via the fixup method, you would have to use the fetch method.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getHl">
+					<header>
+						<h3>getHl <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String racer </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request all hotlaps for a given racer.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getCh">
+					<header>
+						<h3>getCh <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String racer </dd>
+							
+							<dt>param</dt> <dd>String car </dd>
+							
+							<dt>param</dt> <dd>String track </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request hotlaps for a given racer in a specific<br />vehicle.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getWr">
+					<header>
+						<h3>getWr <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String car </dd>
+							
+							<dt>param</dt> <dd>String track </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request world records for a given track or vehicle.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getPb">
+					<header>
+						<h3>getPb <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String racer </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request personal bests for a given racer.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getFuel">
+					<header>
+						<h3>getFuel <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String racer </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request fuel usage per lap for a given racer.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getPst">
+					<header>
+						<h3>getPst <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String racer </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request online racer statistics.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getHosts">
+					<header>
+						<h3>getHosts <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request online hosts and racers.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getTeams">
+					<header>
+						<h3>getTeams <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request team information.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getHl_log">
+					<header>
+						<h3>getHl_log <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request hotlap upload log.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getHllog">
+					<header>
+						<h3>getHllog <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Alias for <a href="#getHl_log">getHl_log</a>.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getCounters">
+					<header>
+						<h3>getCounters <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request global lap counts of all vehicles and tracks.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="getHighlights">
+					<header>
+						<h3>getHighlights <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+							<dt>param</dt> <dd>String country </dd>
+							
+							<dt>param</dt> <dd>Function callback </dd>
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Convenience function to request highlights log for a given country. Contains<br />information such as winners, personal bests and world records.</p>
+
+<p>Data returned is newline (\n) delimited HTML.</p>
+					</section>
+
+				</section>
+				
+
+				<section>
+					
+				</section>
+			</article>
+			
+			<article id="response" class="module">
+				<header>
+					<h2>response <small>module</small></h2>
+				</header>
+
+				<section class="params">
+					<dl class="dl-horizontal">
+						
+						<dt>param</dt> <dd>Object values Unparsed response from LFSWorld</dd>
+						
+
+						
+					</dl>
+				</section>
+
+				<section>
+					<p>The <strong>response</strong> object is handed to your callback functions after a request<br />has been made to the LFSWorld API. You'll be mostly using it in order to<br />determine if the request was successful, as well as using it to interrogate<br />the results.</p>
+
+<p>This object should not be manually created.</p>
+				</section>
+
+				
+				<section class="method" id="data">
+					<header>
+						<h3>data <small>property</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Parsed data from LFSWorld. This is the property you should use. No<br />protection is provided against overwriting or altering.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="raw">
+					<header>
+						<h3>raw <small>property</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>If you need to look at the raw response from LFSWorld, use this property. </p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="status">
+					<header>
+						<h3>status <small>property</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>HTTP status code response from LFSWorld. Please note that the LFSWorld<br />API responses with 200 (success) even if there was an error, such as<br />improper Ident Key. It should not be relied on. Use <a href="#isError">isError</a>.</p>
+					</section>
+
+				</section>
+				
+				<section class="method" id="isError">
+					<header>
+						<h3>isError <small>method</small></h3>
+					</header>
+
+					<section class="params">
+						<dl class="dl-horizontal">
+							
+
+							
+							<dt>return</dt> <dd>Boolean Returns true if the response was an error</dd>
+							
+						</dl>
+					</section>
+
+					<section>
+						<p>Should be used by <strong>all</strong> registered callbacks to determine if the request to<br />the LFSWorld API was successful. Failure to do so may result in undesirable<br />behaviour.</p>
+					</section>
+
+				</section>
+				
+
+				<section>
+					
+				</section>
+			</article>
+			
+
+		</div>
+	</body>
+</html>
