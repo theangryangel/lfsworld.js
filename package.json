@@ -1,6 +1,6 @@
 {
 	"name": "lfsworld.js",
-	"version": "0.0.1-unstable",
+	"version": "0.0.1",
 	"author": "the_angry_angel <karl@theangryangel.co.uk>",
 	"description": "LFSWorld API wrapper.",
 	"repository": {

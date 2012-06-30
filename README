@@ -1,0 +1,5 @@
+# lfsworld.js
+A small utility wrapper around [Shred](https://github.com/spire-io/shred) to
+query LFSWorld's pubstats API.
+
+See docs/index.html for full info.
